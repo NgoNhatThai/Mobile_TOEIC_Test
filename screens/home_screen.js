@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native"
 
-function home_screen(){
+function home_screen({navigation}){
     return(
         <View>
             <View style={styles.header}>
@@ -67,21 +67,30 @@ function home_screen(){
             <View style={styles.menu}>
                 <TouchableOpacity style={styles.select1}>
                     <Image style={styles.s1Img} source={require('../assets/s1_img.png')}/>
-                    <Text style={styles.menuText}>Home</Text>
+                    <Text style={[styles.menuText, {color: 'rgba(9, 188, 162, 1)'}]}>Home</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.select2}>
+                <TouchableOpacity style={styles.select2} onPress={
+                    ()=>{
+                        navigation.navigate('favourite_screen')
+                    }}>
                     <Image style={styles.s2Img} source={require('../assets/s2_img.png')}/>
                     <Text style={styles.menuText}>Favourite</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.select3}>
+                <TouchableOpacity style={styles.select3} onPress={()=>{
+                    navigation.navigate('vocabulary_screen')
+                }}>
                     <Image style={styles.s3Img} source={require('../assets/s3_img.png')}/>
                     <Text style={styles.menuText}>Vocabulary</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.select4}>
+                <TouchableOpacity style={styles.select4} onPress={()=>{
+                    navigation.navigate('video_screen')
+                }}>
                     <Image style={styles.s4Img} source={require('../assets/s4_img.png')}/>
                     <Text style={styles.menuText}>Video</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.select5}>
+                <TouchableOpacity style={styles.select5} onPress={()=>{
+                    navigation.navigate('profile_screen')
+                }}>
                     <Image style={styles.s5Img} source={require('../assets/s5_img.png')}/>
                     <Text style={styles.menuText}>Profile</Text>
                 </TouchableOpacity>
@@ -408,29 +417,34 @@ const styles= StyleSheet.create({
         width: 60,
         height: 50,
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     select3: {
         width: 60,
         height: 50,
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     select4: {
         width: 60,
         height: 50,
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     select5: {
         width: 60,
         height: 50,
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     s1Img: {
         width: 35,
-        height: 35
+        height: 35,
+        marginLeft: 10
     },
     s2Img: {
         width: 35,
@@ -453,5 +467,6 @@ const styles= StyleSheet.create({
     menuText: {
         fontSize: 11,
         fontWeight: 700,
+        textAlign: 'center'
     }
 })

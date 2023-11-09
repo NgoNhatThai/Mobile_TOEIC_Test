@@ -1,6 +1,6 @@
-import { Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 
-function test_screen(){
+function test_screen({navigation}){
     return(
         <View>
             <Text>Test</Text>
@@ -8,3 +8,8 @@ function test_screen(){
     )
 }
 export default test_screen;
+const styles=StyleSheet.create({
+    container: {
+        
+    }
+})
