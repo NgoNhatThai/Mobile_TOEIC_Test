@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native"
 
 function home_screen({navigation}){
     return(
-        <View>
+        <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.title}>HOME</Text>
             </View>
@@ -24,14 +24,18 @@ function home_screen({navigation}){
             </View>
             <Text style={styles.adText4}>TOEIC Practice</Text>
             <View style={styles.practiceWrapper}>
-                <View style={styles.miniTest}>
+                <TouchableOpacity style={styles.miniTest} onPress={()=>{
+                    navigation.navigate('test_screen')
+                }}>
                     <Image style={styles.rocketImg} source={require('../assets/rocket_icon.png')}/>
                     <Text style={styles.testName1}>Mini test</Text>
-                </View>
-                <View style={styles.fullTest}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.fullTest} onPress={()=>{
+                    navigation.navigate('test_screen')
+                }}>
                     <Image style={styles.manhghepImg} source={require('../assets/manhghep_icon.png')}/>
                     <Text style={styles.testName2}>Full test</Text>
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={styles.descWrapper}>
                 <Text style={styles.testDesc1}>Random 48 questions</Text>
@@ -103,10 +107,9 @@ export default home_screen;
 const styles= StyleSheet.create({
     container: {
         width: '100%',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(253, 248, 248, 1)'
+        height: '100%',
+        backgroundColor: 'rgba(253, 248, 248, 1)',
+        position: 'relative'
     },
     header: {
         width: '100%',
@@ -403,9 +406,10 @@ const styles= StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginTop: 0,
         borderTopWidth: 2,
-        borderColor: 'rgba(0, 0, 0, 1)'
+        borderColor: 'rgba(0, 0, 0, 1)',
+        position: 'absolute',
+        bottom: 0
     },
     select1: {
         width: 60,
