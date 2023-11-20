@@ -1,6 +1,8 @@
 import {StyleSheet, Text, TouchableOpacity, View, Image, FlatList, SafeAreaView} from "react-native"
+import store from "../redux/store"
 
 function profile_screen({navigation}){
+    console.log(store.getState());
     return(
         <View style={styles.container}>
             <View style={styles.header}>

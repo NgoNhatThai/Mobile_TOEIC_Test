@@ -1,11 +1,14 @@
 import {StyleSheet, Text, TouchableOpacity, View, Image, FlatList, SafeAreaView, TextInput} from "react-native"
 import {useState, useEffect} from "react"
+import savePoint from "../redux/action"
+import store from "../redux/store"
+import action from "../redux/action"
 
 function test_screen({navigation}){
     const [data, setData]= useState({})
     const [select, setSelect]= useState()
     const [isTran, setTranslate] = useState()
-    console.log(data);
+    //console.log(data);
     useEffect(()=>{
         getQuestion();
         //console.log(text);
@@ -24,9 +27,15 @@ function test_screen({navigation}){
                 <Text style={styles.title}>Lab 7</Text>
                 <TouchableOpacity style={styles.submitButton} onPress={()=>{
                     if(select==data.true){
-                        console.log("10 điểm");
+                        action.value=10;
+                        store.dispatch(action)
+                        //console.log(store.getState());
+                        navigation.navigate('score_screen', {score: 10})
                     } else {
-                        console.log("0 điểm");
+                        action.value=0;
+                        store.dispatch(action)
+                        //console.log(store.getState());
+                        navigation.navigate('score_screen', {score: 0})
                     }
                 }}>
                     <Text style={[styles.title, {color: 'rgba(2, 190, 165, 1)'}]}>Submit</Text>

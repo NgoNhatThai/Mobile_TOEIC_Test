@@ -9,6 +9,7 @@ import profile_screen from './screens/profile_screen'
 import test_screen from './screens/test_screen'
 import video_screen from './screens/video_screen'
 import vocabulary_screen from './screens/vocabulary_screen'
+import score_screen from './screens/score_screen';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name='test_screen' component={test_screen} options={{headerShown: false}}/>
         <Stack.Screen name='video_screen' component={video_screen} options={{headerShown: false}}/>
         <Stack.Screen name='vocabulary_screen' component={vocabulary_screen} options={{headerShown: false}}/>
+        <Stack.Screen name='score_screen' component={score_screen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

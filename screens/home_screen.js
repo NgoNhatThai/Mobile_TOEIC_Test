@@ -1,6 +1,21 @@
+import { useFocusEffect } from "@react-navigation/native";
+import React, { useEffect, useState } from "react"
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native"
+import store from "../redux/store"
 
-function home_screen({navigation}){
+function home_screen({navigation, route}){
+    const [globalState, setGlobalState] = useState(0);
+
+        useEffect(() => {
+            const unsubscribe = store.subscribe(() => {
+            setGlobalState(store.getState());
+            });
+
+            return () => {
+            unsubscribe();
+            };
+        }, []); 
+        const score = `${globalState}`;
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -14,7 +29,7 @@ function home_screen({navigation}){
             <Text style={styles.adText3}>Estimated score</Text>
             <View style={styles.scoreWrapper}>
                 <Image style={styles.scoreImg} source={require('../assets/score_img.png')}/>
-                <Text style={styles.scoreText}>--</Text>
+                <Text style={styles.scoreText}>{score}</Text>
                 <Text style={styles.maxScoreText}>/405</Text>
                 <Image style={styles.headphone} source={require('../assets/headphone_icon.png')}/>
                 <Image style={styles.bookmark} source={require('../assets/bookmark_icon.png')}/>
