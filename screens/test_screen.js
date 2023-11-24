@@ -7,12 +7,14 @@ import action from "../redux/action"
 function test_screen({navigation}){
     const [data, setData]= useState({})
     const [select, setSelect]= useState()
-    const [isTran, setTranslate] = useState()
-    //console.log(data);
+    const [question, setQuesion] = useState('')
+    const [flag, setFlag]= useState(true)
+
     useEffect(()=>{
         getQuestion();
-        //console.log(text);
-    }, {})
+        
+    }, [])
+    
     const getQuestion = ()=>{
         fetch('https://654108cc45bedb25bfc31cd9.mockapi.io/ToeicQuestion/1')
         .then(response => response.json())
@@ -21,6 +23,9 @@ function test_screen({navigation}){
             setData(json)
         })
     }
+
+    console.log(data);
+
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -28,13 +33,11 @@ function test_screen({navigation}){
                 <TouchableOpacity style={styles.submitButton} onPress={()=>{
                     if(select==data.true){
                         action.value=10;
-                        store.dispatch(action)
-                        //console.log(store.getState());
+                        store.dispatch(action)                       
                         navigation.navigate('score_screen', {score: 10})
                     } else {
                         action.value=0;
-                        store.dispatch(action)
-                        //console.log(store.getState());
+                        store.dispatch(action)                        
                         navigation.navigate('score_screen', {score: 0})
                     }
                 }}>
@@ -42,8 +45,11 @@ function test_screen({navigation}){
                 </TouchableOpacity>
             </View>
             <Text style={styles.adText1}>Title</Text>
-            <Text style={styles.adText2} editable={false}>{data.title}</Text>
-            <TouchableOpacity style={styles.btn}>
+            <Text style={styles.adText2} editable={false} >{flag===true ? data.title : data.translate}</Text>
+            <TouchableOpacity style={styles.btn} onPress={()=>{
+                //Set flag to translate
+                setFlag(!flag)
+            }}>
                 <Text style={styles.btnText}>Translate</Text>
             </TouchableOpacity>
             <View style={styles.questionWrapper}>

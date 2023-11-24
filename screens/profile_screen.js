@@ -216,7 +216,8 @@ const styles= StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 2,
         borderColor: 'rgba(0, 0, 0, 1)',
-        position: 'absolute',
+        backgroundColor: 'white',
+        position: 'fixed',
         bottom: 0
     },
     select1: {

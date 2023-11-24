@@ -423,8 +423,10 @@ const styles= StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 2,
         borderColor: 'rgba(0, 0, 0, 1)',
-        position: 'absolute',
-        bottom: 0
+        backgroundColor: 'white',
+        position: 'fixed',
+        bottom: 0,
+        zIndex: 1
     },
     select1: {
         width: 60,

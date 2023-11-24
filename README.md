@@ -9,11 +9,6 @@ Dự án này được thực hiện dựa trên 1 app cùng tên được đăn
 
 4. Đánh giá và theo dõi: Ứng dụng thường cho phép người dùng theo dõi tiến trình học tập của họ thông qua việc theo dõi điểm số và tiến bộ trong các bài tập.
 
-5. Các kĩ thuật được ứng dụng:
-    + Navigation: chuyển đổi giữa các màn hình.
-    + API: lấy dữ liệu câu hỏi từ MockAPI.
-    + Redux: lưu trữ điểm trong bài test để hiển thị lại lên màn hình Home.
-
   Các chức năng và giao diện có thể sẽ không được đầy đủ, xin cám ơn thầy đã xem bài !
 
   Link figma: https://www.figma.com/file/tdKFUbvFqj5rQCmyRW18rH/Untitled?type=design&node-id=0-1&mode=design&t=qvd14XQVAJNSm0JK-0
