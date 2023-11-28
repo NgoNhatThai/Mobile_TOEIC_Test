@@ -23,7 +23,7 @@ function home_screen({navigation, route}){
             </View>
             <View style={styles.dowloadWrapper}>
                 <Image style={styles.downloadImg} source={require('../assets/download_icon.png')}/>
-                <Text style={styles.adText1}>TOEIC Test version for WINDOWNS</Text>
+                <Text style={styles.adText1}>TOEIC Test version for WINDOWS</Text>
                 <Text style={styles.adText2}>(ad)</Text>
             </View>
             <Text style={styles.adText3}>Estimated score</Text>
@@ -421,12 +421,11 @@ const styles= StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        borderTopWidth: 2,
-        borderColor: 'rgba(0, 0, 0, 1)',
         backgroundColor: 'white',
         position: 'fixed',
         bottom: 0,
-        zIndex: 1
+        zIndex: 1,
+        boxShadow: '8px -5px 0px 0px rgba(0, 0, 0, 0.1)',
     },
     select1: {
         width: 60,
@@ -472,8 +471,8 @@ const styles= StyleSheet.create({
         height: 35
     },
     s3Img: {
-        width: 35,
-        height: 35,
+        width: 39,
+        height: 34,
         marginLeft: 5
     },
 

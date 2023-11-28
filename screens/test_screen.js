@@ -64,7 +64,7 @@ function test_screen({navigation}){
                 }}>
                     <Text style={styles.adText3}>A</Text>
                 </TouchableOpacity>
-                <Text style={styles.adText3}>{data.answer1}</Text>
+                <Text style={styles.adText4}>{data.answer1}</Text>
             </View>
             <View style={[styles.answer, {backgroundColor: `${select==2 ? 'rgba(205, 240, 62, 1)' : 'rgba(253, 248, 248, 1)'}`}]}>
                 <TouchableOpacity style={styles.selectBtn} onPress={()=>{
@@ -72,7 +72,7 @@ function test_screen({navigation}){
                 }}>
                     <Text style={styles.adText3}>B</Text>
                 </TouchableOpacity>
-                <Text style={styles.adText3}>{data.answer2}</Text>
+                <Text style={styles.adText4}>{data.answer2}</Text>
             </View>
             <View style={[styles.answer, {backgroundColor: `${select==3 ? 'rgba(205, 240, 62, 1)' : 'rgba(253, 248, 248, 1)'}`}]}>
                 <TouchableOpacity style={styles.selectBtn} onPress={()=>{
@@ -80,7 +80,7 @@ function test_screen({navigation}){
                 }}>
                     <Text style={styles.adText3}>C</Text>
                 </TouchableOpacity>
-                <Text style={styles.adText3}>{data.answer3}</Text>
+                <Text style={styles.adText4}>{data.answer3}</Text>
             </View>
             <View style={[styles.answer, {backgroundColor: `${select==4 ? 'rgba(205, 240, 62, 1)' : 'rgba(253, 248, 248, 1)'}`}]}>
                 <TouchableOpacity style={styles.selectBtn} onPress={()=>{
@@ -88,7 +88,7 @@ function test_screen({navigation}){
                 }}>
                     <Text style={styles.adText3}>D</Text>
                 </TouchableOpacity>
-                <Text style={styles.adText3}>{data.answer4}</Text> 
+                <Text style={styles.adText4}>{data.answer4}</Text> 
             </View>
         </View>
     )
@@ -167,12 +167,14 @@ const styles=StyleSheet.create({
         marginLeft: 15
     },
     answer: {
-        width: '90%',
+        width: '95%',
         height: 40,
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        margin: 15,
-        borderRadius: 10
+        marginTop: 15,
+        marginLeft: 5,
+        borderRadius: 10,
+        paddingLeft: 10
     },
     selectBtn: {
         width: 40,
@@ -188,7 +190,15 @@ const styles=StyleSheet.create({
         fontSize: 16,
         fontWeight: 500,
         textAlign: 'left',
+        marginLeft: 2,
+        marginTop: 5
+    },
+    adText4: {
+        fontFamily: "Inter",
+        fontSize: 16,
+        fontWeight: 500,
+        textAlign: 'left',
         marginLeft: 5,
-        marginTop: 15
+        marginTop: 12
     }
 })
